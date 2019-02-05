@@ -22,7 +22,6 @@ class CohortsController < ApplicationController
       startdate: params[:cohort][:startdate],
       enddate: params[:cohort][:enddate],
       students: params[:cohort][:students],
-      teacher_id: params[:cohort][:teacher_id],
       course_id: params[:cohort][:course_id]
     )
 

@@ -5,6 +5,8 @@
     <p>Teacher: <%=teacher.firstname%> <%=teacher.lastname%>  <%= link_to "Edit Teacher", edit_teacher_path(teacher) %> <%= link_to "Destroy Teacher", teacher_path(teacher), method: :delete %></p>
         <li>Salary: $<%=teacher.salary%></li>
         <li>Education: <%=teacher.education%></li>
+        <li>Cohort: <%=teacher.cohort.name%></li>
+       
         <br>
     
 <%end%>

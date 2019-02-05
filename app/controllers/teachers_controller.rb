@@ -1,6 +1,7 @@
 class TeachersController < ApplicationController
   def index
     @teachers = Teacher.all
+    @cohorts = Cohort.all
   end
 
   def show
@@ -45,7 +46,8 @@ class TeachersController < ApplicationController
       lastname: params[:teacher][:lastname],
       age: params[:teacher][:age],
       salary: params[:teacher][:salary],
-      education: params[:teacher][:education]
+      education: params[:teacher][:education],
+      cohort_id: params[:teacher][:cohort_id]
     )
 
     redirect_to teacher_path(teacher)
