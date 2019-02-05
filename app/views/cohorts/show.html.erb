@@ -1,0 +1,38 @@
+<h1>Cohorts#show</h1>
+<p>Find me in app/views/cohorts/show.html.erb</p>
+
+<h1>All Cohorts</h1>
+
+
+
+<p>
+  <strong>Name: </strong>
+  <%= @cohort.name %>
+</p>
+ 
+<p>
+  <strong>Start Date: </strong>
+  <%= @cohort.startdate %>
+</p>
+
+<p>
+  <strong>End Date: </strong>
+  <%= @cohort.enddate %>
+</p>
+
+<p>
+  <strong>Course Name: </strong>
+  <%=@cohort.course.course_name%>
+</p>
+
+<p>
+  <strong>Students: </strong>
+  <%= @cohort.students %>
+</p>
+
+
+
+<p>
+  <strong>id: </strong>
+  <%= @cohort.id %>
+</p>

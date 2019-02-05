@@ -1,0 +1,39 @@
+<%= form_with model: @cohort, local: true do |form|%>
+
+<p>
+<%= form.label :name%><br>
+<%= form.text_field :name%>
+</p>
+
+<p>
+<%= form.label :startdate%><br>
+<%= form.date_field :startdate%>
+</p>
+
+<p>
+<%= form.label :enddate%><br>
+<%= form.date_field :enddate%>
+</p>
+
+<p>
+<%= form.label :instructor%><br>
+<%=form.hidden_field :teacher_id, value: @teacher_id%>
+<%= form.select :teacher_id, @teachers.map {|teacher| [teacher.firstname,teacher.id]}%>
+</p>
+
+<p>
+<%= form.label :course%><br>
+<%=form.hidden_field :course_id, value: @course_id%>
+<%= form.select :course_id, @courses.map {|course| [course.course_name,course.id]}%>
+</p>
+
+<p>
+<%= form.label :students%><br>
+<%= form.text_field :students%>
+</p>
+
+<p>
+<%=form.submit 'submit'%>
+</p>
+
+<%end%>
