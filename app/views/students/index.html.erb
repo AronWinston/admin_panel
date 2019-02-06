@@ -1,10 +1,12 @@
 
 
 <ul class="list">
+
 <% @students.each do |student|%>
-    <p>student: <%=student.firstname%> <%=student.lastname%>  <%= link_to "Edit student", edit_student_path(student) %> <%= link_to "Destroy student", student_path(student), method: :delete %></p>
+    <p>Student: <%=link_to "#{student.firstname} #{student.lastname}", student_path(student)%>  <%= link_to "Edit student", edit_student_path(student) %> <%= link_to "Destroy student", student_path(student), method: :delete %></p>
         <li>Age: <%=student.age%></li>
         <li>Education: <%=student.education%></li>
+        <li>ID : <%=student.id%></li>
         <br>
     
 <%end%>

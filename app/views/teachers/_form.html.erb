@@ -26,9 +26,10 @@
 <%= form.label :education%><br>
 <%= form.text_field :education%>
 </p>
-
+<p>
+<%= form.label :cohort%><br>
 <%=form.hidden_field :cohort_id, value: @cohort_id%>
-<%= form.select :cohort_id, cohorts.map {|cohort| [cohort.name,cohort.id]}%>
+<%= form.select :cohort_id, @cohorts.map {|cohort| [cohort.name,cohort.id]}%>
 
 <p>
 <%=form.submit 'submit'%>

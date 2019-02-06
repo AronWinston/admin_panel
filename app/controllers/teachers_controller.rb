@@ -40,6 +40,7 @@ class TeachersController < ApplicationController
 
   def update
     teacher = Teacher.find(params[:id])
+    @cohorts = Cohort.all
 
     teacher.update(
       firstname: params[:teacher][:firstname],

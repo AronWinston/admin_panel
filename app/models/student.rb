@@ -4,4 +4,6 @@ class Student < ApplicationRecord
     validates :education, inclusion: { 
                     in: %w(hs college masters phd), 
                     message: "%{value} is not a valid size" }
+    has_many :student_cohorts
+    has_many :cohorts, :through => :student_cohorts
 end

@@ -1,0 +1,9 @@
+<h1>Studentcohorts#index</h1>
+<p>Find me in app/views/studentcohorts/index.html.erb</p>
+
+<ul>
+<%@st.each do|s|%>
+<li><%=s.student.firstname%></li>
+<li><%=s.cohort.name%></li>
+<%end%>
+</ul>

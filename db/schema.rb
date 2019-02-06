@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_04_225121) do
+ActiveRecord::Schema.define(version: 2019_02_06_212939) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,11 +19,12 @@ ActiveRecord::Schema.define(version: 2019_02_04_225121) do
     t.string "name"
     t.date "startdate"
     t.date "enddate"
-    t.string "students"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "course_id"
+    t.bigint "teacher_id"
     t.index ["course_id"], name: "index_cohorts_on_course_id"
+    t.index ["teacher_id"], name: "index_cohorts_on_teacher_id"
   end
 
   create_table "courses", force: :cascade do |t|
@@ -31,6 +32,15 @@ ActiveRecord::Schema.define(version: 2019_02_04_225121) do
     t.integer "hours"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "student_cohorts", force: :cascade do |t|
+    t.bigint "student_id"
+    t.bigint "cohort_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["cohort_id"], name: "index_student_cohorts_on_cohort_id"
+    t.index ["student_id"], name: "index_student_cohorts_on_student_id"
   end
 
   create_table "students", force: :cascade do |t|
@@ -55,5 +65,7 @@ ActiveRecord::Schema.define(version: 2019_02_04_225121) do
   end
 
   add_foreign_key "cohorts", "courses"
+  add_foreign_key "cohorts", "teachers"
+  add_foreign_key "student_cohorts", "cohorts"
   add_foreign_key "teachers", "cohorts"
 end

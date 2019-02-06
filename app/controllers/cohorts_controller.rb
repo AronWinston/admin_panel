@@ -1,55 +1,76 @@
 class CohortsController < ApplicationController
   def index
     @cohorts = Cohort.all
+    @students = Student.all.uniq
     
     
   end
 
   def show
-    @teachers = Teacher.all
+    
     @cohort = Cohort.find(params[:id])
+    @students = (@cohort.students.all).uniq
+    
   end
 
   def new
     @cohort = Cohort.new
     @teachers = Teacher.all
     @courses = Course.all
+    @students = Student.all
   end
 
   def create
-    @cohort = Cohort.create(
+    @cohort = Cohort.new(
       name: params[:cohort][:name],
       startdate: params[:cohort][:startdate],
       enddate: params[:cohort][:enddate],
-      students: params[:cohort][:students],
       course_id: params[:cohort][:course_id]
     )
 
-    if @cohort.save
+   
+  if @cohort.save
+      StudentCohort.create(
+        student_id: params[:cohort][:student_id],
+        cohort_id: @cohort.id
+      )
       redirect_to @cohort
     else
       render 'new'
     end
+  
   end
 
   def edit
     @cohort = Cohort.find(params[:id])
     @teachers = Teacher.all
     @courses = Course.all
+    @students = Student.all
   end
 
   def update
-    teacher = Teacher.find(params[:id])
+    @courses = Course.all
+    @teachers = Teacher.all
     cohort = Cohort.find(params[:id])
     cohort.update(
       name: params[:cohort][:name],
       startdate: params[:cohort][:startdate],
       enddate: params[:cohort][:enddate],
-      students: params[:cohort][:students],
       course_id: params[:cohort][:course_id]
+      
     )
 
-    redirect_to cohort_path(cohort)
+    if cohort.save
+      StudentCohort.create(
+        student_id: params[:cohort][:student_id],
+        cohort_id: cohort.id
+      )
+      redirect_to cohort_path(cohort)
+    else
+      render 'edit'
+    end
+
+    
 
   end
 

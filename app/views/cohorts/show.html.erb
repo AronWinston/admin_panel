@@ -1,7 +1,7 @@
 <h1>Cohorts#show</h1>
 <p>Find me in app/views/cohorts/show.html.erb</p>
 
-<h1>All Cohorts</h1>
+<h1>Cohort Id</h1>
 
 
 
@@ -25,10 +25,7 @@
   <%=@cohort.course.course_name%>
 </p>
 
-<p>
-  <strong>Students: </strong>
-  <%= @cohort.students %>
-</p>
+
 
 
 
@@ -36,3 +33,13 @@
   <strong>id: </strong>
   <%= @cohort.id %>
 </p>
+
+<p>
+  <strong>Students: </strong>
+    <% @students.each do |student|%>
+        <%=student.firstname%>
+        <%=","%>
+        <%end%>
+</p>
+
+<%=link_to "Back", :back %>

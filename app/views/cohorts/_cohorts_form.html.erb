@@ -18,8 +18,16 @@
 <p>
 <%= form.label :instructor%><br>
 <%=form.hidden_field :teacher_id, value: @teacher_id%>
-<%= form.select :teacher_id, @teachers.map {|teacher| [teacher.firstname,teacher.id]}%>
+<%=form.select :teacher_id, @teachers.map {|teacher| [teacher.firstname,teacher.id]}%>
 </p>
+
+<p>
+<%= form.label :students%><br>
+<%=form.hidden_field :student_id, value: @student_id%>
+
+<%= form.select :student_id, @students.map { |student| [student.firstname, student.id] }%>
+</p>
+
 
 <p>
 <%= form.label :course%><br>
@@ -27,10 +35,6 @@
 <%= form.select :course_id, @courses.map {|course| [course.course_name,course.id]}%>
 </p>
 
-<p>
-<%= form.label :students%><br>
-<%= form.text_field :students%>
-</p>
 
 <p>
 <%=form.submit 'submit'%>
