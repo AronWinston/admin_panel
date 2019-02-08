@@ -24,25 +24,25 @@
   
     <% if admin_signed_in? %>
     Logged in as <strong><%= current_admin.email %></strong>.<br /><br />
-  <center>
+  
+  
   <div class="navbar">
-        
-        
         <a style="margin-left:20px" href="/teachers">Teacher</a>
         <a style="margin-left:20px" href="/courses">Courses</a>
         <a style="margin-left:20px" href="/cohorts">Cohorts</a>
         <a style="margin-left:20px" href="/students">Students</a>
 
-        <a style="margin-left:20px"><%= link_to 'Edit profile', edit_admin_registration_path, :class => 'navbar', :id => 'option' %></a>
-        <a style="margin-left:20px"><%= link_to "Logout", destroy_admin_session_path, method: :delete, :class => 'navbar', :id => 'option'  %></a>
+        <a style="margin-left:20px"><%= link_to 'Edit profile', edit_admin_registration_path,  :id => 'option' %></a>
+        <a style="margin-left:20px"><%= link_to "Logout", destroy_admin_session_path, method: :delete,  :id => 'option'  %></a>
          
     
       <% else %> 
-    <a><%= link_to "Sign up", new_admin_registration_path, :class => 'navbar'  %></a> 
-    <a><%= link_to "Login", new_admin_session_path, :class => 'navbar'  %> </a>
+    <a><%= link_to "Sign up", new_admin_registration_path  %></a>
+    <a><%= link_to "Login", new_admin_session_path  %> </a> 
+    
   <% end %>
   </div>
-  </center>
+  
 
   <div class="info">
     <%= yield %>
