@@ -25,7 +25,7 @@
 </p>
 
 <p>
-  <strong>Go to Teacher page to see teacher </strong>
+  <em>Go to Teacher page to see teacher </em>
   
 </p>
 
@@ -37,8 +37,25 @@
 </p>
 
 <p>
-  <strong>Students: </strong>
-  <%=@students%>
+  
+    <table class="students">
+    <strong><em>Students</em></strong><br>
+    <tr>
+      <th>Id</th>
+      <th>FirstName</th>
+      <th>Lastname</th>
+    </tr>
+    <tr>
+  <%@students.each do |student|%>
+      
+      <td><center><%=student.id%></center></td>
+      <td><center><%=student.firstname%></center></td>
+      <td><center><%=student.lastname%></center></td>
+      
+    </tr>
+ <%end%>
+    </table>
+  
 </p>
 
 <%=link_to "Back", :back %>
