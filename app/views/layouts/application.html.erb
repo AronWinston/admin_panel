@@ -11,7 +11,9 @@
 
   <body>
     <center>
+    <div class="top">
     <h1 class="title">Administration Panel</h2>
+    </div>
     
     
  
@@ -36,7 +38,7 @@
          
     
       <% else %> 
-    <a><%= link_to "Sign up", new_admin_registration_path, :class => 'navbar'  %></a> |
+    <a><%= link_to "Sign up", new_admin_registration_path, :class => 'navbar'  %></a> 
     <a><%= link_to "Login", new_admin_session_path, :class => 'navbar'  %> </a>
   <% end %>
   </div>
