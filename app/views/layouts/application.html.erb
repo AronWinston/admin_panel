@@ -11,8 +11,8 @@
 
   <body>
     <center>
-    <h1>Administration Panel</h2>
-    </center>
+    <h1 class="title">Administration Panel</h2>
+    
     
  
     <p class="notice"><%= notice %></p>
@@ -22,22 +22,29 @@
   
     <% if admin_signed_in? %>
     Logged in as <strong><%= current_admin.email %></strong>.<br /><br />
-  <ul class="navbar">
-        <li><a href="/teachers">Teacher</a></li>
-        <li><a href="/courses">Courses</a></li>
-        <li><a href="/cohorts">Cohorts</a></li>
-        <li><a href="/students">Students</a></li> 
+  <center>
+  <div class="navbar">
+        
+        
+        <a style="margin:20px" href="/teachers">Teacher</a>
+        <a style="margin:20px" href="/courses">Courses</a>
+        <a style="margin:20px" href="/cohorts">Cohorts</a>
+        <a style="margin:20px" href="/students">Students</a>
+
+        <a style="margin:20px"><%= link_to 'Edit profile', edit_admin_registration_path, :class => 'navbar', :id => 'option' %></a>
+        <a style="margin:20px"><%= link_to "Logout", destroy_admin_session_path, method: :delete, :class => 'navbar', :id => 'option'  %></a>
          
-    <li><a><%= link_to 'Edit profile', edit_admin_registration_path, :class => 'navbar-link' %></a></li>
-    <li><a><%= link_to "Logout", destroy_admin_session_path, method: :delete, :class => 'navbar-link'  %></a></li>
+    
       <% else %> 
-    <li><a><%= link_to "Sign up", new_admin_registration_path, :class => 'navbar-link'  %></a><li> 
-    <li><a><%= link_to "Login", new_admin_session_path, :class => 'navbar-link'  %> </a></li>
+    <a><%= link_to "Sign up", new_admin_registration_path, :class => 'navbar'  %></a> |
+    <a><%= link_to "Login", new_admin_session_path, :class => 'navbar'  %> </a>
   <% end %>
-  </ul>
+  </div>
+  </center>
 
   <div class="info">
     <%= yield %>
   </div>
+  </center>
   </body>
 </html>

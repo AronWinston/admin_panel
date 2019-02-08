@@ -24,7 +24,7 @@
 
 <p>
 <%= form.label :education%><br>
-<%= form.text_field :education%>
+<%= form.select  :education, options_for_select(["hs","college","masters","phd"])%>
 </p>
 <p>
 <%= form.label :cohort%><br>

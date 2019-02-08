@@ -76,5 +76,6 @@ ActiveRecord::Schema.define(version: 2019_02_08_162851) do
 
   add_foreign_key "cohorts", "courses"
   add_foreign_key "student_cohorts", "cohorts"
+  add_foreign_key "student_cohorts", "students"
   add_foreign_key "teachers", "cohorts"
 end

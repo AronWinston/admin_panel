@@ -1,4 +1,4 @@
-
+<h1>Cohorts</h1>
 
 <h1><%=@cohort.name%></h1>
 
@@ -38,12 +38,12 @@
 
 <p>
   
-    <table class="students">
+    <table style="margin:20px" class="students">
     <strong><em>Students</em></strong><br>
     <tr>
-      <th>Id</th>
-      <th>FirstName</th>
-      <th>Lastname</th>
+      <th><em>Id</em></th>
+      <th><em>Firstname</em></th>
+      <th><em>Lastname</em></th>
     </tr>
     <tr>
   <%@students.each do |student|%>
@@ -58,4 +58,4 @@
   
 </p>
 
-<%=link_to "Back", :back %>
+<%=link_to "Back", :back %>  <%= link_to "Edit Cohort", edit_cohort_path(@cohort) %>
