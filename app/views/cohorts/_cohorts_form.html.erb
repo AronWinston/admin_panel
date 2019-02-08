@@ -25,7 +25,7 @@
 <%= form.label :students%><br>
 <%=form.hidden_field :student_id, value: @student_id%>
 
-<%= form.select :student_id, @students.map { |student| [student.firstname, student.id] }%>
+<%= form.select :student_id, @students.map { |student| [student.firstname, student.id]}%>
 </p>
 
 

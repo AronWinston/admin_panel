@@ -6,15 +6,8 @@
     <p>Name: <%=link_to "#{cohort.name}", cohort_path(cohort)%> <%= link_to "Edit Cohort", edit_cohort_path(cohort) %> <%= link_to "Destroy Cohort", cohort_path(cohort), method: :delete %></p>
         <li>Start date: <%=cohort.startdate%></li>
         <li>End date: <%=cohort.enddate%></li>
-        <li><strong>Students:</strong> 
-        <%@students.each do |student|%>
-        <%=student.firstname%>
-        <%=","%>
-        <%end%>
-        </li>
-        
-        
         <li>Course Name: <%=cohort.course.course_name%></li>
+        
     <br>
 
     

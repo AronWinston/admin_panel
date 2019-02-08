@@ -2,6 +2,7 @@ class CohortsController < ApplicationController
   def index
     @cohorts = Cohort.all
     @students = Student.all.uniq
+    @teacher = Teacher.all
     
     
   end
@@ -10,6 +11,7 @@ class CohortsController < ApplicationController
     
     @cohort = Cohort.find(params[:id])
     @students = (@cohort.students.all).uniq
+    
     
   end
 
@@ -82,6 +84,5 @@ class CohortsController < ApplicationController
 
     redirect_to '/cohorts'
   end
-
 
 end
