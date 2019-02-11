@@ -12,7 +12,7 @@
   <body>
     <center>
     <div class="top">
-    <h1 class="title">Administration Panel</h2>
+    <h1 id="title">Administration Panel</h1>
     </div>
     
     
@@ -26,7 +26,7 @@
     Logged in as <strong><%= current_admin.email %></strong>.<br /><br />
   
   
-  <div class="navbar">
+  <div class="navbar" id="nav">
         <a style="margin-left:20px" href="/teachers">Teacher</a>
         <a style="margin-left:20px" href="/courses">Courses</a>
         <a style="margin-left:20px" href="/cohorts">Cohorts</a>
@@ -48,5 +48,10 @@
     <%= yield %>
   </div>
   </center>
+  <center>
+  <div class="cover">
+    <img src="http://pluspng.com/img-png/apple-png-for-teachers-polka-dot-apple-clip-art-578.png" hieght="250px" width="250px">
+    </div>
+    </center>
   </body>
 </html>

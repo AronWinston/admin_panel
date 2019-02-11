@@ -1,19 +1,33 @@
+
+
 body{
-    background-image: url('https://www.freeiconspng.com/uploads/pencil-png-pencil-blank--http--www-wpclipartm-education-s-10.png');
-    background-position: bottom;
-    background-size: 20%;
-    background-repeat: no-repeat;
+    background-image: linear-gradient(to bottom , lightyellow, lightyellow);
+    
+}
+
+.cover{
+    background-image: linear-gradient(to bottom , lightyellow, lightyellow);
 }
 
 .top{
-    background-color: white;
+    background-image: linear-gradient(to bottom , lightyellow, lightyellow);
     width: 500px;
 }
 
+#nav{
+    background-image: linear-gradient(to bottom , lightyellow, lightyellow);
+}
 
-.title{
-    font-size: 8em;
-    margin: 20px;
+.list{
+    background-image: radial-gradient(lightgrey , lightyellow, lightcoral);
+}
+
+
+#title{
+    font-size: 3em;
+    margin:10px;
+    padding: 20px;
+    text-shadow: 3px 2px grey;
 }
 
 #option{
