@@ -3,6 +3,7 @@ class CohortsController < ApplicationController
     @cohorts = Cohort.all
     @students = Student.all.uniq
     @teacher = Teacher.all
+    flash[:info]="do not delete a cohort if students are enrolled"
     
     
   end

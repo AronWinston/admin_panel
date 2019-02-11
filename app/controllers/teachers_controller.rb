@@ -30,6 +30,7 @@ class TeachersController < ApplicationController
       redirect_to @teacher
     else
       @cohorts = Cohort.all
+      flash[:info]="must create a cohort before you can create a teacher"
       render :new
     end
   end

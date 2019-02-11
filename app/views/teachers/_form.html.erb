@@ -31,8 +31,10 @@
 <%=form.hidden_field :cohort_id, value: @cohort_id%>
 <%= form.select :cohort_id, @cohorts.map {|cohort| [cohort.name,cohort.id]}%>
 
+
 <p>
 <%=form.submit 'submit'%>
+<%=flash[:info]%>
 </p>
 
 <%end%>
