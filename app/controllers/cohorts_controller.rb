@@ -21,6 +21,7 @@ class CohortsController < ApplicationController
     @teachers = Teacher.all
     @courses = Course.all
     @students = Student.all
+    flash[:error]="must create a course before you can creat cohorts"
   end
 
   def create
